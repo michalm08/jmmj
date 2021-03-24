@@ -1,0 +1,36 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(201, 201, 201);
+  padding: 0rem 5rem;
+  height: 88px;
+  background-color: $background;
+  box-shadow: 0px 0px 6px rgb(155, 155, 155);
+
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .logo,
+  .auth,
+  .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo {
+    cursor: pointer;
+  }
+  .buttons {
+    li {
+      margin: 0 16px;
+      cursor: pointer;
+      color: $lightBlack;
+    }
+  }
+  .auth {
+    color: $darkBlue;
+  }
+}

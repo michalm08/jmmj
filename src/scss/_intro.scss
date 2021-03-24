@@ -1,0 +1,28 @@
+.introSection {
+  position: relative;
+  overflow: hidden;
+  img {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+  }
+  background-color: $background;
+  align-items: center;
+  height: calc(100vh - 88px);
+  height: 70vh;
+  .box {
+    padding: 10rem 20rem;
+    text-align: center;
+    h2 {
+      margin-bottom: 1rem;
+      color: $lightBlack;
+      font-size: 44px;
+    }
+    p {
+      margin-bottom: 2rem;
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #c9c9c9;
+  padding: 0rem 5rem;
+  height: 88px;
+  background-color: rgba(60, 100, 175, 0.06);
+  -webkit-box-shadow: 0px 0px 6px #9b9b9b;
+          box-shadow: 0px 0px 6px #9b9b9b;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+nav .logo,
+nav .auth,
+nav .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+nav .logo {
+  cursor: pointer;
+}
+
+nav .buttons li {
+  margin: 0 16px;
+  cursor: pointer;
+  color: #373f41;
+}
+
+nav .auth {
+  color: #3c64b1;
+}
+
+.btnDark {
+  border: 1px solid #3c64b1;
+  background-color: #3c64b1;
+  color: white;
+  font-size: 14px;
+}
+
+.btnLight {
+  border: 1px solid #3c64b1;
+  color: #3c64b1;
+  font-size: 14px;
+}
+
+.btn {
+  padding: 12px 18px;
+  margin: 0 12px;
+  cursor: pointer;
+}
+
+p {
+  font-size: 16px;
+  color: #737b7d;
+}
+
+h3 {
+  font-size: 32px;
+  color: #373f41;
+}
+
+.introSection {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(60, 100, 175, 0.06);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: calc(100vh - 88px);
+  height: 70vh;
+}
+
+.introSection img {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.introSection .box {
+  padding: 10rem 20rem;
+  text-align: center;
+}
+
+.introSection .box h2 {
+  margin-bottom: 1rem;
+  color: #373f41;
+  font-size: 44px;
+}
+
+.introSection .box p {
+  margin-bottom: 2rem;
+  font-size: 16px;
+}
+
+.content .img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 255px;
+  height: 260px;
+  padding: auto;
+  -webkit-box-shadow: 0 0 5px #e4e4e4;
+          box-shadow: 0 0 5px #e4e4e4;
+}
+
+.content .text {
+  margin: 1rem 15rem;
+  text-align: center;
+}
+
+.content .text h3 {
+  margin-bottom: 1rem;
+}
+
+.content .api {
+  width: 255px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.content .column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 8rem;
+}
+
+.content .column h6 {
+  font-size: 18px;
+}
+/*# sourceMappingURL=main.css.map */
