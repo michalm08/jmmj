@@ -1,5 +1,5 @@
-import React from "react";
-import unsplash from "../img/unsplash.png";
+import React from 'react';
+import unsplash from '../img/unsplash.png';
 
 const Introduction = () => {
   return (
@@ -14,10 +14,12 @@ const Introduction = () => {
           you know, like or want. And most importantly - have fun!
         </p>
         <div className='buttons'>
-          <a  className='btn btnDark'>
+          <a className='btn btnDark' href='/#'>
             Button with a label
           </a>
-          <a className='btn btnLight'>This button looks empty</a>
+          <a className='btn btnLight' href='/#'>
+            This button looks empty
+          </a>
         </div>
       </div>
     </div>

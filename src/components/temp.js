@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+//kopia mysectios
+import React, { useState, useEffect } from 'react';
 
-import image from "../img/image.svg";
-import { connect } from "react-redux";
-import { getCities, getCity } from "../actions/handle";
+import image from '../img/image.svg';
+import { connect } from 'react-redux';
+import { getCities, getCity } from '../actions/handle';
+import {  getTopMovies } from '../api';
 
-const Content = ({ getCities, getCity, cities, city }) => {
-  const [data, setData] = useState("");
+const MySection = ({ getCities, getCity, cities, city }) => {
+  const [data, setData] = useState('');
   useEffect(() => {
     getCities();
     //eslint-disable-next-line
@@ -73,42 +75,14 @@ const Content = ({ getCities, getCity, cities, city }) => {
                 <h6>Use images in place of</h6>
                 <p>
                   the placeholders above. Or divs with some data. Whatever you
-                  like.{" "}
+                  like.{' '}
                 </p>
               </div>
               <div className='api'>
                 <img src={image} alt='box' />
-                <h6>Use real world data</h6>
+                <h6 onClick={getTopMovies}>Tutaj klik</h6>
                 <p>
-                  remember to use external data from an API or a JSON object.{" "}
-                </p>
-              </div>
-            </div>
-
-            <div className='column'>
-              <div className='api'>
-                <img src={image} alt='box' />
-                <h6>APIs without Auth</h6>
-                <p>might be much quicker and easier to implement. </p>
-              </div>
-              <div className='api'>
-                <img src={image} alt='box' />
-                <h6>If the API does not work</h6>
-                <p>check a different one, also rembember about CORS. </p>
-              </div>
-              <div className='api'>
-                <img src={image} alt='box' />
-                <h6>Use images in place of</h6>
-                <p>
-                  the placeholders above. Or divs with some data. Whatever you
-                  like.{" "}
-                </p>
-              </div>
-              <div className='api'>
-                <img src={image} alt='box' />
-                <h6>Use real world data</h6>
-                <p>
-                  remember to use external data from an API or a JSON object.{" "}
+                  remember to use external data from an API or a JSON object.{' '}
                 </p>
               </div>
             </div>
@@ -123,4 +97,4 @@ const mapStateToProps = (state) => ({
   cities: state.handle.cities.list,
   city: state.handle.city,
 });
-export default connect(mapStateToProps, { getCities, getCity })(Content);
+export default connect(mapStateToProps, { getCities, getCity })(MySection);
