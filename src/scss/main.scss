@@ -6,11 +6,13 @@ ul {
   list-style-type: none;
 }
 body {
-  font-family: "Mulish", sans-serif;
+  font-family: 'Mulish', sans-serif;
 }
 
-@import "var";
-@import "nav";
-@import "global";
-@import "intro";
-@import "content";
+@import 'var';
+@import 'nav';
+@import 'global';
+@import 'intro';
+@import 'content';
+@import '_searchMovie';
+@import '_topMovies';

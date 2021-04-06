@@ -5,12 +5,12 @@ const SeachMovie = () => {
   const [data, setData] = useState('');
   const [movies, setMovies] = useState([]);
   const [selectMovie, setSelectMovie] = useState({
-    title: 'nazwa',
-    imgSource: '123',
-    date: '12-12-1212',
-    vote: 5,
+    title: '',
+    imgSource: '',
+    date: '',
+    vote: '',
   });
-
+  // console.log(selectMovie);
   const searchMovie = async (data) => {
     try {
       const res = await axios.get(
@@ -30,10 +30,23 @@ const SeachMovie = () => {
     // if (data.length>3) {
     if (e.target.value != '') {
       searchMovie(e.target.value);
+    } else {
+      setMovies([]);
     }
   };
+  const onClick = (movie) => {
+    console.log(movie);
+    setSelectMovie({
+      title: movie.original_title,
+      imgSource: movie.poster_path,
+      date: movie.release_date,
+      vote: movie.vote_average,
+    });
+    setMovies([]);
+    setData('');
+  };
   return (
-    <>
+    <div className='searchMovie'>
       <input
         type='text'
         value={data}
@@ -41,32 +54,38 @@ const SeachMovie = () => {
         onChange={onChange}
       />
       {/* <input type='submit' value='Search' /> */}
-      <ul>
-        {movies.map((movie) => (
-          <li
-            key={movie.id}
-            onClick={() =>
-              setSelectMovie({
-                title: movie.original_title,
-                // imgSource: movie.poster_path,
-                // date: movie.release_date,
-                // vote: movie.vote_average,
-              })
-            }
-          >
-            {movie.original_title}
-          </li>
-        ))}
-      </ul>
-
-      <div className='box'>
-        <img
-          src={`https://image.tmdb.org/t/p/w500/yHx8OLSKc3VtIBB5lIe90c0fHOX.jpg`}
-          alt='imgg'
-        />
-        <h1>Name</h1>
+      <div className='itemList'>
+        <ul>
+          {movies.map((movie) => (
+            <div key={movie.id} className='clickElem'>
+              <li onClick={() => onClick(movie)}>
+                {/* <li onClick={onClick}> */}
+                {movie.original_title}
+              </li>
+            </div>
+          ))}
+        </ul>
       </div>
-    </>
+
+      <div className='filmArea'>
+        {selectMovie.imgSource && (
+          <>
+            <div className='photoContainter'>
+              <img
+                className='cover'
+                src={`https://image.tmdb.org/t/p/w500${selectMovie.imgSource}`}
+                alt={selectMovie.title}
+              />
+            </div>
+            <div className='desc'>
+              <h2>{selectMovie.title}</h2>
+              <p>{`release: ${selectMovie.date}`}</p>
+              <p>{`rate: ${selectMovie.vote}`}</p>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
   );
 };
 
