@@ -1,5 +1,5 @@
-import React from "react";
-import logo from "../img/logo.svg";
+import React from 'react';
+import logo from '../img/logo.svg';
 
 const Nav = () => {
   return (
@@ -20,7 +20,9 @@ const Nav = () => {
         <ul>
           <li className='btn'>Log In</li>
           <li className='btnDark btn'>Register</li>
-          <li><i class="fas fa-bars"></i></li>
+          <li>
+            <i className='fas fa-bars'></i>
+          </li>
         </ul>
       </div>
     </nav>

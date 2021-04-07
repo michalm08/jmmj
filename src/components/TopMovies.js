@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { useWindowScroll } from 'react-use';
+import React, { useState } from 'react';
 import axios from 'axios';
 let load = 0;
 let page = 1;
-const TopMovies = () => {
+const TopMovies = ({ apiKey }) => {
   const scrollToBottom = () =>
     window.scrollTo({
       top: document.documentElement.scrollHeight,
@@ -13,18 +12,16 @@ const TopMovies = () => {
   const [topMovies, setTopMovies] = useState([]);
 
   const getTopMovies = async () => {
-    console.log('hi getTopMovies');
     try {
       if (load % 5 === 0 && load !== 0) {
         page++;
         load = 0;
       }
       const res = await axios.get(
-        `https://api.themoviedb.org/3/movie/popular?page=${page}&api_key=c518001f713c0c7f139c3a44b0cba9a0`
+        `https://api.themoviedb.org/3/movie/popular?page=${page}&api_key=${apiKey}`
       );
       let myArr = res.data.results;
       myArr = myArr.slice(load * 4, load * 4 + 4);
-      //   console.log(myArr[0].original_title);
       setTopMovies([...topMovies, ...myArr]);
     } catch (err) {
       console.log(err);
@@ -32,10 +29,8 @@ const TopMovies = () => {
     load++;
   };
 
-  //   let movies = ['bolo', 'lolo', 'kolo', 'wolo'];
   const onClick = () => {
     getTopMovies();
-    console.log(topMovies);
     setTimeout(() => {
       scrollToBottom();
     }, 50);
@@ -43,7 +38,7 @@ const TopMovies = () => {
   return (
     <>
       <div className='topMovies'>
-      <h1 style={{ textAlign: 'center' }}>Top movies</h1>
+        <h1 style={{ textAlign: 'center' }}>Top movies</h1>
         <div className='moviesSection'>
           {topMovies.map((movie) => (
             <div className='filmArea'>
@@ -61,9 +56,9 @@ const TopMovies = () => {
             </div>
           ))}
         </div>
-        <a onClick={onClick} className='btn btnLight'>
+        <button onClick={onClick} className='btn btnLight'>
           Load more...
-        </a>
+        </button>
       </div>
     </>
   );
