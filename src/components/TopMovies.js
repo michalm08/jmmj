@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import TopMoviesList from './TopMoviesList';
 let load = 0;
 let page = 1;
 const TopMovies = ({ apiKey }) => {
@@ -36,31 +37,14 @@ const TopMovies = ({ apiKey }) => {
     }, 50);
   };
   return (
-    <>
-      <div className='topMovies'>
-        <h1 style={{ textAlign: 'center' }}>Top movies</h1>
-        <div className='moviesSection'>
-          {topMovies.map((movie) => (
-            <div className='filmArea'>
-              <div className='photoContainter'>
-                <img
-                  className='cover'
-                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                  alt={movie.title}
-                />
-                <p>{movie.overview}</p>
-              </div>
-              <div className='desc'>
-                <h2>{movie.original_title}</h2>
-              </div>
-            </div>
-          ))}
-        </div>
-        <button onClick={onClick} className='btn btnLight'>
-          Load more...
-        </button>
-      </div>
-    </>
+    <div className='topMovies'>
+      <h1 style={{ textAlign: 'center' }}>Top movies</h1>
+      <TopMoviesList topMovies={topMovies} />
+
+      <button onClick={onClick} className='btn btnLight'>
+        Load more...
+      </button>
+    </div>
   );
 };
 

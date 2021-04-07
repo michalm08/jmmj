@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import SearchMovieList from './SearchMovieList';
 
 const SeachMovie = ({ apiKey }) => {
   const [data, setData] = useState('');
@@ -49,16 +50,7 @@ const SeachMovie = ({ apiKey }) => {
         placeholder='Search movie'
         onChange={onChange}
       />
-      <div className='itemList'>
-        <ul>
-          {movies.map((movie) => (
-            <div key={movie.id} className='clickElem'>
-              <li onClick={() => onClick(movie)}>{movie.original_title}</li>
-            </div>
-          ))}
-        </ul>
-      </div>
-
+      <SearchMovieList movies={movies} onClick={onClick} />
       <div className='filmArea'>
         {selectMovie.imgSource && (
           <>
