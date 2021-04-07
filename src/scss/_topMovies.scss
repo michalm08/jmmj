@@ -1,63 +1,70 @@
 .topMovies {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  
-  margin: 2rem 5rem 3rem;
-  .filmArea {
+  flex-direction: column;
+  align-items: center;
+  // margin-bottom: 95px;
+  padding-bottom: 83px;
+  .moviesSection {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1rem;
-    width: 15rem;
+    flex-wrap: wrap;
+    justify-content: center;
 
-    border-radius: 2rem;
+    margin: 2rem 5rem 3rem;
+    .filmArea {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1rem;
+      width: 15rem;
 
-    .photoContainter {
-      box-shadow: 0 0 5px rgb(126, 126, 126);
-      width: 255px;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 1rem;
-      position: relative;
-      overflow: hidden;
+      border-radius: 2rem;
 
-      .cover {
-        border-radius: 1rem;
+      .photoContainter {
+        box-shadow: 0 0 5px rgb(126, 126, 126);
         width: 255px;
         height: 260px;
         object-fit: cover;
-        transition: 0.5s;
-      }
-      p {
-        text-align: center;
-        width: 100%;
-        position: absolute;
-        top: 2rem;
-        color: black;
-        opacity: 0;
-        transition: 0.5s;
-      }
-      .shadow {
-        background-color: red;
-      }
+        border-radius: 1rem;
+        position: relative;
+        overflow: hidden;
 
-      &:hover {
-        p {
-          opacity: 1;
-        }
         .cover {
-          opacity: 0.2;
+          border-radius: 1rem;
+          width: 255px;
+          height: 260px;
+          object-fit: cover;
+          transition: 0.5s;
+        }
+        p {
+          text-align: center;
+          width: 100%;
+          position: absolute;
+          top: 2rem;
+          color: black;
+          opacity: 0;
+          transition: 0.5s;
+        }
+        .shadow {
+          background-color: red;
+        }
+
+        &:hover {
+          p {
+            opacity: 1;
+          }
+          .cover {
+            opacity: 0.2;
+          }
         }
       }
-    }
 
-    .desc {
-      h2 {
-        text-align: center;
-      }
-      p {
-        color: black;
+      .desc {
+        h2 {
+          text-align: center;
+        }
+        p {
+          color: black;
+        }
       }
     }
   }

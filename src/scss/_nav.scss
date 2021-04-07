@@ -4,7 +4,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: rgb(201, 201, 201);
-  padding: 0rem 5rem;
+  // padding: 0rem 165px;
+  padding: 0rem 12vw;
   height: 88px;
   background-color: $background;
   box-shadow: 0px 0px 6px rgb(155, 155, 155);
@@ -22,15 +23,65 @@ nav {
   }
   .logo {
     cursor: pointer;
+    margin: 0 6rem 0 12px;
   }
   .buttons {
     li {
       margin: 0 16px;
       cursor: pointer;
       color: $lightBlack;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
     }
   }
   .auth {
     color: $darkBlue;
+    ul {
+      li:first-child {
+        padding-left: 0;
+        margin: 0;
+      }
+      li:nth-child(2) {
+        margin: 0;
+      }
+    }
+    i {
+      display: none;
+    }
   }
+
+  @media (max-width: 1200px) {
+    padding: 0rem 10vw;
+    .logo {
+      margin: 0;
+    }
+  }
+  @media (max-width: 992px) {
+    padding: 0rem 6vw;
+    .buttons {
+      li {
+        margin: 0 5px;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    padding: 0rem 12vw;
+    .buttons {
+      display: none;
+    }
+    .auth {
+      .btn {
+        display: none;
+      }
+      .fas {
+        display: block;
+        margin: auto 0;
+        margin-left: 1rem;
+        font-size: 26px;
+        // color: $lightBlack;
+      }
+    }
+  }
+  //576
 }

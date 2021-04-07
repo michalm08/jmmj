@@ -15,7 +15,6 @@ const TopMovies = () => {
   const getTopMovies = async () => {
     console.log('hi getTopMovies');
     try {
-      // c518001f713c0c7f139c3a44b0cba9a0
       if (load % 5 === 0 && load !== 0) {
         page++;
         load = 0;
@@ -43,9 +42,9 @@ const TopMovies = () => {
   };
   return (
     <>
-      <h1 style={{ textAlign: 'center' }}>Top movies</h1>
       <div className='topMovies'>
-        <>
+      <h1 style={{ textAlign: 'center' }}>Top movies</h1>
+        <div className='moviesSection'>
           {topMovies.map((movie) => (
             <div className='filmArea'>
               <div className='photoContainter'>
@@ -61,7 +60,7 @@ const TopMovies = () => {
               </div>
             </div>
           ))}
-        </>
+        </div>
         <a onClick={onClick} className='btn btnLight'>
           Load more...
         </a>

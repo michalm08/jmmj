@@ -9,7 +9,7 @@ const Nav = () => {
       </div>
       <div className='buttons'>
         <ul>
-          <li>What we do</li>
+          <li>What we do?</li>
           <li>Our projects</li>
           <li>Testimonials</li>
           <li>Blog</li>
@@ -20,6 +20,7 @@ const Nav = () => {
         <ul>
           <li className='btn'>Log In</li>
           <li className='btnDark btn'>Register</li>
+          <li><i class="fas fa-bars"></i></li>
         </ul>
       </div>
     </nav>

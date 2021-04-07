@@ -6,13 +6,16 @@ const Introduction = () => {
     <div className='introSection'>
       <img src={unsplash} alt='bg' />
       <div className='box'>
-        <h2>Hello fellow developer!</h2>
-        <p>
-          Do as much as you can in a decent amount of time. Do not push it, 1-4
-          hours are totally okay. Just show us your skills.
-          Sass/styled-components, BEM and React are preferred. But use anything
-          you know, like or want. And most importantly - have fun!
-        </p>
+        <div className='text'>
+          <h2>Hello fellow developer!</h2>
+          <p>
+            Do as much as you can in a decent amount of time. Do not push it,
+            1-4 hours are totally okay. Just show us your skills.
+            Sass/styled-components, BEM and React are preferred. But use
+            anything you know, like or want.
+          </p>
+          <p className='footage'>And most importantly - have fun!</p>
+        </div>
         <div className='buttons'>
           <a className='btn btnDark' href='/#'>
             Button with a label
